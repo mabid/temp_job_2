@@ -1,0 +1,7 @@
+<h3>Proposals</h3>
+<% @proposals.each do |proposal| %>
+  <hr>
+  <h3> <%=proposal.requests.find_by(sender_type: 'Office').sender.name%> </h3>
+  <h3> <%=proposal.time_range%> </h3>
+  <hr>
+<% end %>

@@ -1,0 +1,11 @@
+<ul>
+  <% @offices.each do |office|%>
+    <li>
+    <div style="display:flex; align-items:center;">
+      <h3><%=office.name%></h6></h3>
+      <%=link_to "Show", office_path(office)%>
+    </div>
+    </li>
+  <% end %>
+</ul>
+<%=link_to "professionals", professionals_path%>

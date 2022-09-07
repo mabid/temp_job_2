@@ -1,0 +1,11 @@
+<ul>
+  <% @professionals.each do |professional|%>
+    <li>
+    <div style="display:flex; align-items:center;">
+      <h3><%=professional.name%></h6></h3>
+      <%=link_to "Show", professional_path(professional)%>
+    </div>
+    </li>
+  <% end %>
+</ul>
+<%=link_to "offices", offices_path%>

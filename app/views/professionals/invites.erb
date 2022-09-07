@@ -1,0 +1,11 @@
+<h3>Invites</h3>
+<% @invites.each do |invite| %>
+  <hr>
+  <% if invite.created_by_type == 'Professional' %>
+    <h3> <%= invite.requests.find_by(sender_type: 'Office').sender.name %> </h3>
+  <% else %>
+    <h3> <%= invite.created_by.name %> </h3>
+  <% end %>
+  <h3> <%=invite.time_range%> </h3>
+  <hr>
+<% end %>

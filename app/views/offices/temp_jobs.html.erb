@@ -1,0 +1,29 @@
+<h1> Temp Job Posts </h1>
+<h3> <%= @office.name %> </h3>
+
+<% @temp_jobs.each do |temp_job| %>
+  <hr/>
+
+  <%=temp_job.time_range%>
+  <h3> Requests </h3>
+  <ul>
+    <% temp_job.requests.each do |request| %>
+      <li>
+        <% if request.receiver_type == 'Professional' %>
+          <%= request.receiver.name %>
+        <%else%>
+          <%= request.sender.name %>
+        <%end%>
+      </li>
+    <% end %>
+  </ul>
+  <h3> Applications </h3>
+  <ul>
+    <% temp_job.applications.each do |application| %>
+      <li>
+        <%= application.sender.name %>
+      </li>
+    <% end %>
+  </ul>
+  <hr/>
+<% end %>

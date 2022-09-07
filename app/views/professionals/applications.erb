@@ -1,0 +1,11 @@
+<h3>Applications</h3>
+<% @applications.each do |application| %>
+  <hr>
+  <% if application.temp_job_post.created_by_type == 'Professional' %>
+    <h3> <%= application.temp_job_post.requests.find_by(sender_type: 'Office').sender.name %> </h3>
+  <% else %>
+    <h3> <%= application.temp_job_post.created_by.name %> </h3>
+  <% end %>
+  <h3> <%=application.temp_job_post.time_range%> </h3>
+  <hr>
+<% end %>

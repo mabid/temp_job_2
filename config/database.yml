@@ -1,0 +1,12 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+
+development:
+  <<: *default
+  database: temp_job_2_development
+
+test:
+  <<: *default
+  database: temp_job_2_test
