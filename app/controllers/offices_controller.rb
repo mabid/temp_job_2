@@ -9,7 +9,7 @@ class OfficesController < ApplicationController
   end
 
   def temp_jobs
-    @temp_jobs = TempJobPost.joins(:requests).where("(created_by_id = ? AND created_by_type = 'Office' AND public = true) OR (created_by_type = 'Professional' AND public = true AND temp_job_proposals.receiver_type = 'Office' AND temp_job_proposals.receiver_id = ?)", @office.id, @office.id ).distinct
+    @temp_jobs = TempJobPost.joins(:requests).where(created_by: @office, public: true).or(TempJobPost.joins(:requests).where(public: true, requests: {receiver: @office}).distinct
   end
 
   def booking_proposals

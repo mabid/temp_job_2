@@ -2,8 +2,9 @@
   Professional.create(name: "Professional #{i + 1}")
 end
 
-Office.create(name: 'Office 1')
-Office.create(name: 'Office 2')
+20.times do |i|
+  Office.create(name: "Office #{i + 1}")
+end
 
 Office.all.each do |office|
   # Example 1: Single Booking Request to multiple professionals

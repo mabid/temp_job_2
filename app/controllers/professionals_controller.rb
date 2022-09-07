@@ -1,5 +1,6 @@
 class ProfessionalsController < ApplicationController
   before_action :set_professional, except: %w(index)
+
   def index
     @professionals = Professional.all
   end
